@@ -35,11 +35,11 @@
 						<muleVersion>${app.runtime}</muleVersion>
 						<username>nandinee2</username>
 						<password>Helloworld@123</password>
-						<applicationName>${appName}</applicationName>
-						<environment>${env}</environment>
-						<region>${region}</region>
-						<workers>${workers}</workers>
-						<workerType>${workerType}</workerType>
+						<applicationName>demo</applicationName>
+						<environment>Sandbox</environment>
+						<region>us-east-2</region>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
                     </cloudHubDeployment>
                 </configuration>
