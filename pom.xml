@@ -32,13 +32,14 @@
 				<configuration>
                     <cloudHubDeployment>
                         <uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>${anypoint.muleVersion}</muleVersion>
+						<muleVersion>${app.runtime}</muleVersion>
 						<username>${anypoint.username}</username>
 						<password>${anypoint.password}</password>
-						<applicationName>${anypoint.appName}</applicationName>
-						<environment>${anypoint.env}</environment>
-						<region>${anypoint.region}</region>
-						<workers>${anypoint.workers}</workers>
+						<applicationName>${appName}</applicationName>
+						<environment>${env}</environment>
+						<region>${region}</region>
+						<workers>${workers}</workers>
+						<workerType>${workerType}</workerType>
 						<objectStoreV2>true</objectStoreV2>
                     </cloudHubDeployment>
                 </configuration>
