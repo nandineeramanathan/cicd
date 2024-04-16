@@ -14,7 +14,7 @@ pipeline
         ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
 		}
       	steps {
-        bat 'mvn deploy -DmuleDeploy -Danypoint.username=nandinee2 -Danypoint.password=Helloworld@123' 
+        sh "mvn deploy -DmuleDeploy -Danypoint.username=${ANYPOINT_CREDENTIALS_USR}  -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW}"
       	}
     	}
 		
