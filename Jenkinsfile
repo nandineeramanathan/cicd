@@ -10,9 +10,13 @@ pipeline
 		}
 		
 		stage('Deploy CloudHub') { 
-     	
+     	environment{
+		ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
+		user = "${ANYPOINT_CREDENTIALS_USR}"
+		password = "${ANYPOINT_CREDENTIALS_PSW}"
+		}
       	steps {
-        bat 'mvn deploy -DmuleDeploy -Danypoint.username=${ANYPOINT_CREDENTIALS_USR}  -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW}' 
+        bat 'mvn deploy -DmuleDeploy -Danypoint.username=%user%  -Danypoint.password=%password%' 
       	}
     	}
 		
