@@ -12,11 +12,10 @@ pipeline
 		stage('Deploy CloudHub') { 
      	environment{
 		ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
-		user = "${ANYPOINT_CREDENTIALS_USR}"
-		password = "${ANYPOINT_CREDENTIALS_PSW}"
+		
 		}
       	steps {
-        bat 'mvn deploy -DmuleDeploy -Danypoint.username=%user%  -Danypoint.password=%password%' 
+        bat 'mvn clean deploy -DmuleDeploy -Danypoint.username=${ANYPOINT_CREDENTIALS_USR}  -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW} -Denv=Sandbox  -Ddeployment.region=us-east-2 -Ddeployment.workers=1 -Ddeployment.workerType=MICRO -DappName=mulesoft-cicd-sample1 -Dapp.runtime=4.6.2' 
       	}
     	}
 		
