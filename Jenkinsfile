@@ -9,14 +9,14 @@ pipeline
 		}
 		stage('Deploy CloudHub') { 
      	environment{
-		ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
+		ANYPOINT_CREDENTIALS = credentials('client_credentials')
 		}
       	steps {
 		script {
                     println ANYPOINT_CREDENTIALS_USR
 					println ANYPOINT_CREDENTIALS_PSW
                 }
-        bat 'mvn clean deploy -DmuleDeploy -DskipTests -Danypoint.username=%ANYPOINT_CREDENTIALS_USR% -Danypoint.password=%ANYPOINT_CREDENTIALS_PSW% -Denv=Sandbox -Ddeployment.region=us-east-2 -Ddeployment.workers=1 -Ddeployment.workerType=MICRO -DappName=mulesoft-cicd-prod12 -Dapp.runtime=4.6.2' 
+        bat 'mvn clean deploy -DmuleDeploy -DskipTests -Dclient.id=%ANYPOINT_CREDENTIALS_USR% -Dclient.secret=%ANYPOINT_CREDENTIALS_PSW% -Denv=Sandbox -Ddeployment.region=us-east-2 -Ddeployment.workers=1 -Ddeployment.workerType=MICRO -DappName=mulesoft-cicd-prod12 -Dapp.runtime=4.6.2' 
       	}
     	}
 		} 
