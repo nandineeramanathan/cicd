@@ -39,7 +39,6 @@
 						<applicationName>${appName}</applicationName>
 						<environment>${env}</environment>
 						<workerType>${deployment.workerType}</workerType>
-						<region>${deployment.region}</region>
 						<objectStoreV2>true</objectStoreV2>
 						<connectedAppClientId>${ap.ca.client_id}</connectedAppClientId>
 						<connectedAppClientSecret>${ap.ca.client_secret}</connectedAppClientSecret>
